@@ -1,0 +1,19 @@
+/* Typography Styles */
+
+/* 
+Google Font Imports 
+- Instrument Serif
+*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Serif:ital@0;1&display=swap');
+
+/* 
+Custom Font Imports
+*/
+
+.instrument-serif{
+  font-family: "Instrument Serif", serif;
+}
+
+.dm-sans-font {
+  font-family: 'DM Sans', sans-serif !important;
+}
