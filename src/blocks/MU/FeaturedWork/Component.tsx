@@ -111,7 +111,7 @@ export const FeaturedWork: React.FC = () => {
               }`}
             >
               {/* Connector Dot */}
-              <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full border border-white/10 shadow-md"></div>
+              {/* <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full border border-white/10 shadow-md"></div> */}
               {/* Empty space to offset layout */}
               <div className="hidden md:block md:w-1/2"></div>
               {/* Card */}

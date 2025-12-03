@@ -20,7 +20,7 @@ const LogoSlider = ({ logos }: { logos: Logo[] }) => {
         {[...logos, ...logos].map((logo: Logo, index: number) => (
           <div
             key={index}
-            className="flex-shrink-0 mx-6 md:mx-10 grayscale hover:grayscale-0 transition-all duration-500 opacity-85 hover:opacity-100"
+            className="flex-shrink-0 mx-6 md:mx-10 grayscale hover:grayscale-0 transition-all duration-500"
           >
             <img src={logo.src} alt={logo.alt} className="h-8 md:h-12 w-auto" />
           </div>
