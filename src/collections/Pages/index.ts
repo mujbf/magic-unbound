@@ -12,7 +12,7 @@ import { SplitTextHero } from '@/blocks/ReadingText/config'
 import { CaseStudySection } from '@/blocks/CaseStudy/config'
 import { ContactBlock } from '@/blocks/Contact/config'
 
-
+// Import all MU blocks
 import { BlogSection } from '@/blocks/MU/BlogSection/config'
 import { ClientLogos } from '@/blocks/MU/ClientLogos/config'
 import { FeaturedWork } from '@/blocks/MU/FeaturedWork/config'
@@ -22,6 +22,16 @@ import { ImpactSection } from '@/blocks/MU/ImpactSection/config'
 import { ReadingText } from '@/blocks/MU/ReadingText/config'
 import { ServicesSection } from '@/blocks/MU/ServicesSection/config'
 import { ServicesSection2 } from '@/blocks/MU/ServicesSection2/config'
+import { AboutHero } from '@/blocks/MU/AboutHero/config'
+import { ImageCarousel } from '@/blocks/MU/ImageCarousel/config'
+import { ServiceVerticals } from '@/blocks/MU/ServiceVerticals/config'
+import { CoreValues } from '@/blocks/MU/CoreValues/config'
+import { TestimonialsCarousel } from '@/blocks/MU/TestimonialsCarousel/config'
+import { CaseStudiesGrid } from '@/blocks/MU/CaseStudiesGrid/config'
+import { VideoSection } from '@/blocks/MU/VideoSection/config'
+import { BlogPost } from '@/blocks/MU/BlogPost/config'
+import { PortfolioItem } from '@/blocks/MU/PortfolioItem/config'
+
 
 
 
@@ -91,7 +101,35 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, SplitTextHero, CaseStudySection, ContactBlock, FullScreenHero, BlogSection, ClientLogos, FeaturedWork, FullScreenVideo, ImpactSection, ReadingText, ServicesSection, ServicesSection2],
+              blocks: [
+                CallToAction,
+                Content,
+                MediaBlock,
+                Archive,
+                FormBlock,
+                SplitTextHero,
+                CaseStudySection,
+                ContactBlock,
+                // MU Blocks
+                FullScreenHero,
+                BlogSection,
+                ClientLogos,
+                FeaturedWork,
+                FullScreenVideo,
+                ImpactSection,
+                ReadingText,
+                ServicesSection,
+                ServicesSection2,
+                AboutHero,
+                ImageCarousel,
+                ServiceVerticals,
+                CoreValues,
+                TestimonialsCarousel,
+                CaseStudiesGrid,
+                VideoSection,
+                BlogPost,
+                PortfolioItem,
+              ],
               required: true,
               admin: {
                 initCollapsed: true,

@@ -72,20 +72,28 @@ const ScrollReadingText2 = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-black py-16 md:py-24 lg:py-32 px-4 md:px-6 bg-shark-950"
+      className="relative py-16 md:py-24 lg:pt-32 lg:pb-60 px-4 md:px-6 bg-shark-950"
     >
-      <div className="max-w-7xl mx-auto">
-        <Text variant="h1" className="mb-16 md:mb-20 lg:mb-24">
-          <span className="text-gray-400 font-normal">Distinctly </span>
-          <span className="text-white italic">human</span>
-          <span className="text-gray-400 font-normal">. &nbsp;</span>
-          <span className="text-gray-400 font-normal">Decidedly </span>
-          <span className="text-white italic">futuristic</span>
-          <span className="text-gray-400 font-normal">.</span>
+       {/* Background Video */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src={'/videos/hero3.mp4'} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-shark-950/50"></div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <Text variant="h1" className="mb-16 md:mb-20 lg:mb-24 text-center">
+          <span className="text-gray-400 font-normal">Distinctly human, decidedly futuristic. </span>
           <br />
-          <span className="text-gray-400 font-normal">Definitely </span>
-          <span className="text-scooter-600 italic">better</span>
-          <span className="text-gray-400 font-normal">.</span>
+          <span className="text-scooter-600 font-normal italic">definitely better. </span>
+
         </Text>
 
         <div className="relative">
@@ -115,7 +123,7 @@ const ScrollReadingText2 = () => {
               return (
                 <p
                   key={paraIndex}
-                  className="text-lg md:text-xl lg:text-2xl leading-relaxed"
+                  className="text-lg md:text-xl lg:text-3xl leading-relaxed text-center max-w-5xl mx-auto font-light"
                   style={{ fontFamily: '"DM Sans", sans-serif' }}
                 >
                   {paragraph.split('').map((char, charIndex) => {
@@ -146,7 +154,7 @@ const ScrollReadingText2 = () => {
 
 export const ReadingText: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="">
       <ScrollReadingText2 />
     </div>
   )

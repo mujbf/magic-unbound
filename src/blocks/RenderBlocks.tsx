@@ -12,6 +12,7 @@ import { SplitTextHero } from './ReadingText/Component'
 import CaseStudySection from './CaseStudy/Component'
 import { ContactBlock } from './Contact/Component'
 
+// Import all MU blocks
 import BlogSection from './MU/BlogSection/Component'
 import ClientLogos from './MU/ClientLogos/Component'
 import FeaturedWork from './MU/FeaturedWork/Component'
@@ -21,6 +22,15 @@ import ImpactSection from './MU/ImpactSection/Component'
 import ReadingText from './MU/ReadingText/Component'
 import ServicesSection from './MU/ServicesSection/Component'
 import ServicesSection2 from './MU/ServicesSection2/Component'
+import AboutHero from './MU/AboutHero/Component'
+import ImageCarousel from './MU/ImageCarousel/Component'
+import ServiceVerticals from './MU/ServiceVerticals/Component'
+import CoreValues from './MU/CoreValues/Component'
+import TestimonialsCarousel from './MU/TestimonialsCarousel/Component'
+import CaseStudiesGrid from './MU/CaseStudiesGrid/Component'
+import VideoSection from './MU/VideoSection/Component'
+import BlogPost from './MU/BlogPost/Component'
+import PortfolioItem from './MU/PortfolioItem/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -31,6 +41,7 @@ const blockComponents = {
   splitTextHero: SplitTextHero,
   caseStudySection: CaseStudySection,
   contactBlock: ContactBlock,
+  // MU Blocks
   blogSection: BlogSection,
   clientLogos: ClientLogos,
   featuredWork: FeaturedWork,
@@ -40,6 +51,15 @@ const blockComponents = {
   readingText: ReadingText,
   servicesSection: ServicesSection,
   servicesSection2: ServicesSection2,
+  aboutHero: AboutHero,
+  imageCarousel: ImageCarousel,
+  serviceVerticals: ServiceVerticals,
+  coreValues: CoreValues,
+  testimonialsCarousel: TestimonialsCarousel,
+  caseStudiesGrid: CaseStudiesGrid,
+  videoSection: VideoSection,
+  blogPost: BlogPost,
+  portfolioItem: PortfolioItem,
 }
 
 export const RenderBlocks: React.FC<{

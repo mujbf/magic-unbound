@@ -29,7 +29,7 @@ const FeaturedWorkCard = ({ project }: { project: Project }) => {
       <div className="p-6">
         <Text
           variant="h4"
-          className="mb-3 lg:mb-6 decoration-transparent decoration-2 underline underline-offset-4 transition-colors duration-300 group-hover:decoration-current"
+          className="mb-3 lg:mb-6 decoration-transparent decoration-2 underline underline-offset-4 transition-colors duration-300"
         >
           {project.title}
         </Text>
@@ -61,27 +61,27 @@ export const FeaturedWork: React.FC = () => {
   const featuredProjects = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=500&fit=crop',
+      image: 'images/jpg/about-carousel-1.jpg',
       title: "A digital reinvention for Sri Lanka's pioneer mutual fund manager",
       description:
         "How we helped one of Sri Lanka's pioneering fund managers get their digital mojo back",
-      tags: ['WEB DESIGN & DEVELOPMENT', 'DIGITAL MARKETING & GROWTH'],
+      tags: ['WEB DESIGN & DEVELOPMENT', 'DIGITAL MARKETING', 'GROWTH'],
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=500&fit=crop',
-      title: 'Building the future of fintech with seamless user experiences',
+      image: 'images/jpg/about-carousel-2.jpg',
+      title: 'Repositioning Calcey for success',
       description:
-        'Creating an intuitive platform that revolutionizes how people interact with financial services',
-      tags: ['UX/UI DESIGN', 'BRAND STRATEGY'],
+        'How we rejuvenated the brand presence and marketing strategy of one of Sri Lanka\'s pioneering global software engineering service providers.',
+      tags: ['BRAND IDENTITY', 'ART DIRECTION', 'VIDEO', 'GRAPHIC DESIGN'],
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop',
-      title: 'Transforming healthcare through innovative digital solutions',
+      image: 'images/jpg/about-carousel-3.jpg',
+      title: 'Mirissa\'s coolest space comes alive',
       description:
-        'Designing patient-centric experiences that improve healthcare delivery and outcomes',
-      tags: ['DIGITAL TRANSFORMATION', 'USER RESEARCH'],
+        'Brand identity and strategy for a novel hospitality concept aiming to challenge the hegemony of destinations such as Bali.',
+      tags: ['BRAND IDENTITY', 'BRAND STRATEGY', 'GRAPHIC DESIGN'],
     },
   ]
   return (

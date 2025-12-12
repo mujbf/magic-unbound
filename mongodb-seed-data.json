@@ -1,0 +1,270 @@
+{
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "layout": [
+        {
+          "blockType": "fullScreenHero",
+          "title": "The conscious, thoughtful, design, storytelling, and 'lab partner' you've been looking for.",
+          "subtitle": "Win new customers, break into new markets (or conquer existing ones), and make serious productivity gains among your teams, all with our help.",
+          "videoUrl": "/videos/hero3.mp4",
+          "gradient": "linear-gradient(90deg, #ffffffff 0%, #ebfffe 35%, #ceffff 65%, #a2fdff 100%)",
+          "links": [
+            {
+              "link": {
+                "type": "custom",
+                "url": "/contact",
+                "label": "Learn More",
+                "newTab": false,
+                "appearance": "default"
+              }
+            },
+            {
+              "link": {
+                "type": "custom",
+                "url": "/work",
+                "label": "Our Work",
+                "newTab": false,
+                "appearance": "outline"
+              }
+            }
+          ]
+        },
+        {
+          "blockType": "servicesSection",
+          "heading": "What We Do",
+          "services": []
+        },
+        {
+          "blockType": "featuredWork",
+          "heading": "Featured Work",
+          "projects": []
+        },
+        {
+          "blockType": "blogSection",
+          "heading": "Latest Insights"
+        },
+        {
+          "blockType": "clientLogos",
+          "heading": "Trusted by Industry Leaders"
+        }
+      ]
+    },
+    {
+      "title": "About",
+      "slug": "about",
+      "layout": [
+        {
+          "blockType": "aboutHero",
+          "title": "<span class=\"italic\">Different</span> in all the right ways.",
+          "subtitle": "",
+          "videoUrl": "/videos/about1.mp4",
+          "height": "600px",
+          "links": [
+            {
+              "link": {
+                "type": "custom",
+                "url": "/contact",
+                "label": "Learn More",
+                "newTab": false,
+                "appearance": "default"
+              }
+            }
+          ]
+        },
+        {
+          "blockType": "imageCarousel",
+          "topMargin": "-160px",
+          "images": [
+            {
+              "image": "/images/jpg/about-carousel-image-1.jpg",
+              "alt": "Gallery image 1"
+            },
+            {
+              "image": "/images/jpg/about-carousel-image-4.jpg",
+              "alt": "Gallery image 2"
+            },
+            {
+              "image": "/images/jpg/about-carousel-image-2.jpg",
+              "alt": "Gallery image 3"
+            },
+            {
+              "image": "/images/jpg/about-carousel-image-5.jpg",
+              "alt": "Gallery image 4"
+            },
+            {
+              "image": "/images/jpg/about-carousel-image-3.jpg",
+              "alt": "Gallery image 5"
+            },
+            {
+              "image": "/images/jpg/about-carousel-image-6.jpg",
+              "alt": "Gallery image 6"
+            }
+          ]
+        },
+        {
+          "blockType": "serviceVerticals",
+          "heading": "There are agencies, there are web developers, there are automation consultants <span class=\"text-[#00C3D0]\">and then there's us.</span>",
+          "subheading": "A team which you cannot really put into a box, but one which you'd absolutely love having on speed dial.\n* If you're Gen-Z or younger, replace 'speed dial' with 'Close Friends' on Instagram.\n\nAt Magic Unbound, our services are ordered into three verticals, each designed to solve a set of pain points we are really good at, well, <span class=\"underline\">solving.</span>",
+          "services": [
+            {
+              "number": "01",
+              "title": "The first is <span class=\"text-shark-50\">Ideas</span>",
+              "description": "for when you are in need of overarching blueprints for your brand such as a brand strategy, a brand design, or a look and feel which is truly yours.",
+              "iconUrl": "/images/png/undraw_coffee.png",
+              "imageUrl": "/images/jpg/about-carousel-image-5.jpg",
+              "imagePosition": "right"
+            },
+            {
+              "number": "02",
+              "title": "The second is <span class=\"text-shark-50\">Execution</span>",
+              "description": "for when you really need someone awesome to work with to design graphics, print advertisements, whip up a slick deck, write copy which stirs heartstrings, or run your social media content plan.",
+              "iconUrl": "/images/png/undraw_camera.png",
+              "imageUrl": "/images/jpg/about-carousel-image-6.jpg",
+              "imagePosition": "left"
+            },
+            {
+              "number": "03",
+              "title": "The third is <span class=\"text-shark-50\">Experiments</span>",
+              "description": "for when you want to drive up productivity across your teams or organization and get a leg up on the competition by reinventing your processes for 2026 with the power of AI. Think custom AI deployments using fine-tuned closed source or open source LLMs, enterprise-grade mini apps for specialized teams so they can get things done faster, and headless content management systems to free you from the vice grip of expensive CMS' which are a real pain to work with.",
+              "iconUrl": "/images/png/undraw_rocket.png",
+              "imageUrl": "/images/jpg/about-carousel-image-4.jpg",
+              "imagePosition": "right"
+            }
+          ]
+        },
+        {
+          "blockType": "coreValues",
+          "heading": "<span class=\"text-gray-400 font-normal\">Our </span><span class=\"text-white italic\">core values</span><span class=\"text-gray-400 font-normal\">.</span>",
+          "paragraphs": [
+            { "text": "Honestly, we've only got one: " },
+            { "text": "Do cool stuff, and do them well." },
+            { "text": "We believe that the world is in a place where the 'tools' are being democratized at a rapid pace which will only continue to accelerate in the coming years." },
+            { "text": "What will separate the grain from the chaff, will be 'taste' and 'skill'. And when the two intersect?" },
+            { "text": "Magic happens (pun intended)." }
+          ],
+          "highlightStartOffset": -0.3
+        },
+        {
+          "blockType": "videoSection",
+          "videoUrl": "/videos/hero2.mp4",
+          "rounded": true,
+          "containerPadding": "py-16"
+        },
+        {
+          "blockType": "testimonialsCarousel",
+          "testimonials": [
+            {
+              "quote": "Magic Unbound, the architects of Calceys vibrant rebrand and energized digital presence, have not just transformed our image but elevated us to a coveted status. Their creative prowess increased our visibility and also played an important part in turning us into a sought-after employer.",
+              "author": "Ishara Walpola",
+              "role": "Director - People and Culture",
+              "company": "Calcey",
+              "avatar": "/images/png/iwcalcey.png",
+              "logo": "/images/client-logos/logo2.png"
+            },
+            {
+              "quote": "Working with Magic Unbound was like watching our vision come to life in ways we never imagined. Their strategic approach to our brand overhaul didnt just give us a new look—it gave us a new voice. Since the rebrand, weve seen a 40% increase in client inquiries and our team morale has never been higher.",
+              "author": "Marcus Chen",
+              "role": "Founder & CEO",
+              "company": "Velocity Labs",
+              "avatar": "/images/png/marcus-velocity.png",
+              "logo": "/images/client-logos/logo1.png"
+            },
+            {
+              "quote": "The team at Magic Unbound brought an incredible blend of creativity and technical expertise to our AI automation project. They didnt just build us tools—they reimagined our entire workflow. Were now operating at twice the speed with half the friction, and our clients have noticed the difference immediately.",
+              "author": "Priya Deshmukh",
+              "role": "Chief Operations Officer",
+              "company": "Nexus Innovations",
+              "avatar": "/images/png/priya-nexus.png",
+              "logo": "/images/client-logos/logo3.png"
+            },
+            {
+              "quote": "Magic Unbound took our scattered brand identity and transformed it into something cohesive, memorable, and authentically us. Their execution team handled everything from social content to our pitch decks with remarkable attention to detail. We finally feel like we have a brand that matches the quality of our work.",
+              "author": "James Okonkwo",
+              "role": "Creative Director",
+              "company": "Studio Meridian",
+              "avatar": "/images/png/james-meridian.png",
+              "logo": "/images/client-logos/logo4.png"
+            },
+            {
+              "quote": "What sets Magic Unbound apart is their ability to listen deeply and translate abstract ideas into tangible results. They helped us launch a custom AI deployment that has become the backbone of our customer service operations. Our response times have improved by 60% and customer satisfaction scores are at an all-time high.",
+              "author": "Sofia Ramirez",
+              "role": "VP of Product",
+              "company": "Horizon Tech",
+              "avatar": "/images/png/sofia-horizon.png",
+              "logo": "/images/client-logos/logo5.png"
+            }
+          ],
+          "backgroundVideo": "/videos/about2.mp4",
+          "backgroundColor": "bg-shark-950"
+        },
+        {
+          "blockType": "caseStudiesGrid",
+          "heading": "<span class=\"italic\">Results</span> that speak for themselves",
+          "subheading": "From brand transformations to AI-powered workflows, our work creates measurable impact for businesses ready to level up.",
+          "caseStudies": [
+            {
+              "percentage": "Ideas",
+              "description": "Brand strategy, brand design, art direction",
+              "iconName": "sparkles",
+              "link": "/case-studies/calcey"
+            },
+            {
+              "percentage": "Execution",
+              "description": "Digital graphic design, Print design, Presentation design, Copywriting, Social content",
+              "iconName": "rocket",
+              "link": "/case-studies/automation"
+            },
+            {
+              "percentage": "Experiments",
+              "description": "Workflow and process transformation using custom AI deployments, Mini-apps for specialized enterprise teams, Headless content management systems",
+              "iconName": "zap",
+              "link": "/case-studies/content"
+            }
+          ]
+        },
+        {
+          "blockType": "cta",
+          "richText": {
+            "root": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "heading",
+                  "tag": "h1",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Let's Talk!"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Ready to create something extraordinary? Let's discuss how we can help transform your vision into reality with innovative design and cutting-edge technology."
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "links": [
+            {
+              "link": {
+                "type": "custom",
+                "url": "/contact",
+                "label": "Get in Touch",
+                "newTab": false,
+                "appearance": "default"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

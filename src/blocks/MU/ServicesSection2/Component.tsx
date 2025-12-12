@@ -1,6 +1,8 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
-import { ArrowRight, Files, Sparkles, Zap, Rocket } from 'lucide-react'
+import { ArrowRight, Files } from 'lucide-react'
+import { Sparkle, Lightning, Rocket } from 'phosphor-react'
 import { Text } from '@/app/(frontend)/branding/components/Text'
 import { Button } from '@/app/(frontend)/branding/components/Button'
 import { GradientText } from '@/components/ui/shadcn-io/gradient-text'
@@ -26,7 +28,7 @@ const ServiceCard = ({
         <div className="space-y-3">
           {services.map((service, index) => (
             <Text key={index} variant="b3" className="flex items-start gap-2">
-              <span className="text-white-400 mt-1">→</span>
+              <span className="text-white-400">‣</span>
               {service}
             </Text>
           ))}
@@ -39,23 +41,21 @@ const ServiceCard = ({
 export const ServicesSection2: React.FC = () => {
   const services = [
     {
-      icon: <Sparkles size={72} />,
+      icon: <Sparkle size={96} />,
       title: 'Ideas',
       services: ['Brand strategy', 'Brand design', 'Art direction'],
     },
     {
-      icon: <Zap size={72} className="text-[#FB3290]/20" />,
+      icon: <Lightning size={96} className="text-[#FB3290]" />,
       title: 'Execution',
       services: [
-        'Digital graphic design',
-        'Print design',
+        'Digital graphic design & print design',
         'Presentation design',
-        'Copywriting',
-        'Social content',
+        'Copywriting & social content',
       ],
     },
     {
-      icon: <Rocket size={72} className="text-[#EB6D00]/20" />,
+      icon: <Rocket size={96} className="text-[#EB6D00]" />,
       title: 'Experiments',
       services: [
         'Workflow transformation using custom AI deployments',
@@ -65,20 +65,20 @@ export const ServicesSection2: React.FC = () => {
     },
   ]
   return (
-    <section className="relative max-w-7xl mx-auto px-0 md:px-0 py-20 md:py-28 bg-black text-white">
+    <section className="relative max-w-8xl mx-auto px-8 py-20 md:py-28 bg-shark-950 text-white">
       {/* Header */}
       <div className="mb-14 text-center px-4 md:px-6">
         <Text variant="h1" className="mb-4 tracking-tight">
-          How We Can Help
+          How we can <span className="italic">help</span>
         </Text>
-        <Text variant="b2" className="">
+        {/* <Text variant="b2" className="">
           From ideation to execution, we transform your vision into reality with our comprehensive
           suite of services.
-        </Text>
+        </Text> */}
       </div>
 
       {/* Modern Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-white/10 rounded-2xl overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-white/10 overflow-hidden">
         {services.map((service, index) => {
           // Assign different hover glow colors per card
           const hoverGradients = [
@@ -91,7 +91,7 @@ export const ServicesSection2: React.FC = () => {
           return (
             <div
               key={index}
-              className="group relative border-b border-r border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors duration-300 flex flex-col justify-start items-start p-8 md:p-10 min-h-[280px]"
+              className="group relative border-b border-r border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors duration-300 flex flex-col justify-start items-start p-8 md:p-10 min-h-[280px] cursor-[url('/images/pointer.png'),_auto]"
             >
               {/* Subtle dynamic hover glow */}
               <div

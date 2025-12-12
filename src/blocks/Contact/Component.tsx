@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { Text } from '@/app/(frontend)/branding/components/Text'
 
 interface ContactInfo {
   address?: string
@@ -65,9 +66,13 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-screen bg-system-dark_100 py-20 md:py-32"
+      className="relative w-full min-h-screen bg-shark-950 py-20 md:py-32 overflow-hidden"
     >
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
+      {/* Background Gradients */}
+      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-scooter-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
         {/* Title Section */}
         <div ref={titleRef} className="mb-20 md:mb-32">
           <motion.div
@@ -75,10 +80,12 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
             animate={isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
             transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <h2 className="text-6xl md:text-8xl mu-type-title text-system-light_100 mb-6">
+            <Text variant="h1" className="text-white mb-6">
               {title}
-            </h2>
-            <p className="text-xl md:text-2xl text-system-light_60 font-['DM_Sans']">{subtitle}</p>
+            </Text>
+            <Text variant="b1" className="text-shark-300 font-light">
+              {subtitle}
+            </Text>
           </motion.div>
         </div>
 
@@ -92,17 +99,17 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
             className="space-y-12"
           >
             <div>
-              <h3 className="text-2xl md:text-4xl font-normal text-system-light_100 mb-16 font-['DM Sans']">
+              <Text variant="h3" className="text-white mb-16">
                 Contact Information
-              </h3>
+              </Text>
 
               <div className="space-y-8">
                 {/* Address */}
                 {contactInfo.address && (
                   <div className="flex gap-6 group">
-                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-system-light_30 rounded-sm group-hover:border-system-light_50 transition-colors duration-300">
+                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-shark-800 rounded-xl bg-shark-900/50 group-hover:border-scooter-500/50 transition-colors duration-300">
                       <svg
-                        className="w-5 h-5 text-system-light_70"
+                        className="w-5 h-5 text-scooter-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -122,12 +129,12 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs tracking-[0.2em] uppercase text-system-light_50 mb-2 font-medium font-['DM_Sans']">
+                      <Text variant="b4" className="tracking-[0.2em] uppercase text-shark-500 mb-2 font-medium">
                         Address
-                      </p>
-                      <p className="text-lg text-system-light_80 leading-relaxed font-['DM_Sans']">
+                      </Text>
+                      <Text variant="b2" className="text-shark-200 leading-relaxed">
                         {contactInfo.address}
-                      </p>
+                      </Text>
                     </div>
                   </div>
                 )}
@@ -135,9 +142,9 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
                 {/* Email */}
                 {contactInfo.email && (
                   <div className="flex gap-6 group">
-                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-system-light_30 rounded-sm group-hover:border-system-light_50 transition-colors duration-300">
+                     <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-shark-800 rounded-xl bg-shark-900/50 group-hover:border-scooter-500/50 transition-colors duration-300">
                       <svg
-                        className="w-5 h-5 text-system-light_70"
+                        className="w-5 h-5 text-scooter-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -151,14 +158,15 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs tracking-[0.2em] uppercase text-system-light_50 mb-2 font-medium font-['DM_Sans']">
+                      <Text variant="b4" className="tracking-[0.2em] uppercase text-shark-500 mb-2 font-medium">
                         Email
-                      </p>
+                      </Text>
                       <a
                         href={`mailto:${contactInfo.email}`}
-                        className="text-lg text-system-light_80 hover:text-system-light_100 transition-colors duration-300 font-['DM_Sans']"
                       >
-                        {contactInfo.email}
+                        <Text variant="b2" className="text-shark-200 hover:text-white transition-colors duration-300">
+                          {contactInfo.email}
+                        </Text>
                       </a>
                     </div>
                   </div>
@@ -167,9 +175,9 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
                 {/* Phone */}
                 {contactInfo.phone && (
                   <div className="flex gap-6 group">
-                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-system-light_30 rounded-sm group-hover:border-system-light_50 transition-colors duration-300">
+                     <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-shark-800 rounded-xl bg-shark-900/50 group-hover:border-scooter-500/50 transition-colors duration-300">
                       <svg
-                        className="w-5 h-5 text-system-light_70"
+                        className="w-5 h-5 text-scooter-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -183,14 +191,15 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs tracking-[0.2em] uppercase text-system-light_50 mb-2 font-medium font-['DM_Sans']">
+                      <Text variant="b4" className="tracking-[0.2em] uppercase text-shark-500 mb-2 font-medium">
                         Phone
-                      </p>
+                      </Text>
                       <a
                         href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
-                        className="text-lg text-system-light_80 hover:text-system-light_100 transition-colors duration-300 font-['DM_Sans']"
                       >
-                        {contactInfo.phone}
+                        <Text variant="b2" className="text-shark-200 hover:text-white transition-colors duration-300">
+                          {contactInfo.phone}
+                        </Text>
                       </a>
                     </div>
                   </div>
@@ -205,13 +214,14 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
             initial={{ opacity: 0, y: 40 }}
             animate={isFormInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="bg-shark-900/40 border border-shark-800/60 p-8 md:p-12 rounded-3xl"
           >
             <div className="space-y-6">
               {/* Name Field */}
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-xs tracking-[0.2em] uppercase text-system-light_50 mb-3 font-medium font-['DM_Sans']"
+                  className="block text-xs tracking-[0.2em] uppercase text-shark-500 mb-3 font-medium font-['DM_Sans']"
                 >
                   Name
                 </label>
@@ -222,7 +232,7 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-transparent border border-system-light_30 focus:border-system-light_50 rounded-sm px-6 py-4 text-system-light_100 font-['DM_Sans'] text-lg transition-colors duration-300 focus:outline-none"
+                  className="w-full bg-shark-950/50 border border-shark-800 focus:border-scooter-500/50 rounded-xl px-6 py-4 text-white font-['DM_Sans'] text-lg transition-colors duration-300 focus:outline-none"
                   placeholder="Your name"
                 />
               </div>
@@ -231,7 +241,7 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-xs tracking-[0.2em] uppercase text-system-light_50 mb-3 font-medium font-['DM_Sans']"
+                  className="block text-xs tracking-[0.2em] uppercase text-shark-500 mb-3 font-medium font-['DM_Sans']"
                 >
                   Email
                 </label>
@@ -242,7 +252,7 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-transparent border border-system-light_30 focus:border-system-light_50 rounded-sm px-6 py-4 text-system-light_100 font-['DM_Sans'] text-lg transition-colors duration-300 focus:outline-none"
+                  className="w-full bg-shark-950/50 border border-shark-800 focus:border-scooter-500/50 rounded-xl px-6 py-4 text-white font-['DM_Sans'] text-lg transition-colors duration-300 focus:outline-none"
                   placeholder="your@email.com"
                 />
               </div>
@@ -251,7 +261,7 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-xs tracking-[0.2em] uppercase text-system-light_50 mb-3 font-medium font-['DM_Sans']"
+                  className="block text-xs tracking-[0.2em] uppercase text-shark-500 mb-3 font-medium font-['DM_Sans']"
                 >
                   Message
                 </label>
@@ -262,7 +272,7 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full bg-transparent border border-system-light_30 focus:border-system-light_50 rounded-sm px-6 py-4 text-system-light_100 font-['DM_Sans'] text-lg transition-colors duration-300 focus:outline-none resize-none"
+                  className="w-full bg-shark-950/50 border border-shark-800 focus:border-scooter-500/50 rounded-xl px-6 py-4 text-white font-['DM_Sans'] text-lg transition-colors duration-300 focus:outline-none resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
@@ -271,10 +281,10 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
               <button
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className={`w-full bg-system-light_100 text-system-dark_100 px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium transition-all duration-300 font-['DM_Sans'] ${
+                className={`w-full bg-white text-shark-950 px-8 py-4 text-sm tracking-[0.2em] uppercase font-bold rounded-xl transition-all duration-300 font-['DM_Sans'] hover:bg-scooter-400 hover:text-white ${
                   isSubmitting
                     ? 'opacity-50 cursor-not-allowed'
-                    : 'hover:bg-system-light_90 active:scale-[0.98]'
+                    : 'active:scale-[0.98]'
                 }`}
               >
                 {isSubmitting
@@ -289,7 +299,7 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({
                 <motion.p
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-center text-system-light_70 font-['DM_Sans']"
+                  className="text-center text-emerald-400 font-['DM_Sans']"
                 >
                   Thank you! We&apos;ll get back to you soon.
                 </motion.p>

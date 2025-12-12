@@ -209,6 +209,15 @@ export interface Page {
     | ReadingTextBlock
     | ServicesSectionBlock
     | ServicesSection2Block
+    | AboutHeroBlock
+    | ImageCarouselBlock
+    | ServiceVerticalsBlock
+    | CoreValuesBlock
+    | TestimonialsCarouselBlock
+    | CaseStudiesGridBlock
+    | VideoSectionBlock
+    | BlogPostBlock
+    | PortfolioItemBlock
   )[];
   meta?: {
     title?: string | null;
@@ -879,23 +888,31 @@ export interface ContactBlock {
  * via the `definition` "FullScreenHeroBlock".
  */
 export interface FullScreenHeroBlock {
-  columns?:
+  title: string;
+  subtitle?: string | null;
+  videoUrl: string;
+  gradient?: string | null;
+  links?:
     | {
-        richText?: {
-          root: {
-            type: string;
-            children: {
-              type: any;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        } | null;
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: string | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: string | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline' | 'primary' | 'secondary' | 'ghost' | 'accent' | 'link') | null;
+        };
         id?: string | null;
       }[]
     | null;
@@ -1134,6 +1151,265 @@ export interface ServicesSection2Block {
   id?: string | null;
   blockName?: string | null;
   blockType: 'servicesSection2';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AboutHeroBlock".
+ */
+export interface AboutHeroBlock {
+  title: string;
+  subtitle?: string | null;
+  videoUrl: string;
+  height?: ('400px' | '600px' | '800px' | '100vh') | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: string | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: string | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'aboutHero';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ImageCarouselBlock".
+ */
+export interface ImageCarouselBlock {
+  images: {
+    image: string | Media;
+    alt: string;
+    id?: string | null;
+  }[];
+  topMargin?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'imageCarousel';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ServiceVerticalsBlock".
+ */
+export interface ServiceVerticalsBlock {
+  heading: string;
+  subheading: string;
+  services: {
+    number: string;
+    title: string;
+    description: string;
+    iconUrl: string;
+    imageUrl?: string | null;
+    imagePosition?: ('left' | 'right') | null;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'serviceVerticals';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CoreValuesBlock".
+ */
+export interface CoreValuesBlock {
+  heading: string;
+  paragraphs: {
+    text: string;
+    id?: string | null;
+  }[];
+  /**
+   * Controls when text starts highlighting. Negative values start before section enters viewport.
+   */
+  highlightStartOffset?: number | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'coreValues';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TestimonialsCarouselBlock".
+ */
+export interface TestimonialsCarouselBlock {
+  testimonials: {
+    quote: string;
+    author: string;
+    role: string;
+    company: string;
+    avatar: string;
+    logo?: string | null;
+    id?: string | null;
+  }[];
+  backgroundVideo?: string | null;
+  backgroundColor?: ('bg-shark-950' | 'bg-black' | 'bg-gray-900') | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'testimonialsCarousel';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CaseStudiesGridBlock".
+ */
+export interface CaseStudiesGridBlock {
+  heading: string;
+  subheading: string;
+  caseStudies: {
+    percentage: string;
+    description: string;
+    iconName: 'sparkles' | 'rocket' | 'zap' | 'star' | 'heart' | 'trophy';
+    link: string;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'caseStudiesGrid';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "VideoSectionBlock".
+ */
+export interface VideoSectionBlock {
+  videoUrl: string;
+  rounded?: boolean | null;
+  containerPadding?: ('py-0' | 'py-8' | 'py-16' | 'py-24') | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'videoSection';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BlogPostBlock".
+ */
+export interface BlogPostBlock {
+  title: string;
+  subtitle?: string | null;
+  author: {
+    name: string;
+    avatar?: string | null;
+    role?: string | null;
+  };
+  publishDate: string;
+  category?: string | null;
+  featuredImage: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  tags?:
+    | {
+        tag?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Estimated reading time in minutes
+   */
+  readTime?: number | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'blogPost';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PortfolioItemBlock".
+ */
+export interface PortfolioItemBlock {
+  projectTitle: string;
+  tagline?: string | null;
+  client: {
+    name: string;
+    industry?: string | null;
+    logo?: string | null;
+  };
+  projectDate: string;
+  heroImage: string;
+  services?:
+    | {
+        service?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  challenge?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  solution?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  results?:
+    | {
+        metric: string;
+        description: string;
+        icon?: ('trending-up' | 'users' | 'target' | 'zap' | 'award' | 'star') | null;
+        id?: string | null;
+      }[]
+    | null;
+  gallery?:
+    | {
+        image: string;
+        caption?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  testimonial?: {
+    quote?: string | null;
+    author?: string | null;
+    role?: string | null;
+    avatar?: string | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'portfolioItem';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1438,6 +1714,15 @@ export interface PagesSelect<T extends boolean = true> {
         readingText?: T | ReadingTextBlockSelect<T>;
         servicesSection?: T | ServicesSectionBlockSelect<T>;
         servicesSection2?: T | ServicesSection2BlockSelect<T>;
+        aboutHero?: T | AboutHeroBlockSelect<T>;
+        imageCarousel?: T | ImageCarouselBlockSelect<T>;
+        serviceVerticals?: T | ServiceVerticalsBlockSelect<T>;
+        coreValues?: T | CoreValuesBlockSelect<T>;
+        testimonialsCarousel?: T | TestimonialsCarouselBlockSelect<T>;
+        caseStudiesGrid?: T | CaseStudiesGridBlockSelect<T>;
+        videoSection?: T | VideoSectionBlockSelect<T>;
+        blogPost?: T | BlogPostBlockSelect<T>;
+        portfolioItem?: T | PortfolioItemBlockSelect<T>;
       };
   meta?:
     | T
@@ -1591,10 +1876,23 @@ export interface ContactBlockSelect<T extends boolean = true> {
  * via the `definition` "FullScreenHeroBlock_select".
  */
 export interface FullScreenHeroBlockSelect<T extends boolean = true> {
-  columns?:
+  title?: T;
+  subtitle?: T;
+  videoUrl?: T;
+  gradient?: T;
+  links?:
     | T
     | {
-        richText?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
         id?: T;
       };
   id?: T;
@@ -1708,6 +2006,215 @@ export interface ServicesSection2BlockSelect<T extends boolean = true> {
     | {
         richText?: T;
         id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AboutHeroBlock_select".
+ */
+export interface AboutHeroBlockSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  videoUrl?: T;
+  height?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ImageCarouselBlock_select".
+ */
+export interface ImageCarouselBlockSelect<T extends boolean = true> {
+  images?:
+    | T
+    | {
+        image?: T;
+        alt?: T;
+        id?: T;
+      };
+  topMargin?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ServiceVerticalsBlock_select".
+ */
+export interface ServiceVerticalsBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  services?:
+    | T
+    | {
+        number?: T;
+        title?: T;
+        description?: T;
+        iconUrl?: T;
+        imageUrl?: T;
+        imagePosition?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CoreValuesBlock_select".
+ */
+export interface CoreValuesBlockSelect<T extends boolean = true> {
+  heading?: T;
+  paragraphs?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  highlightStartOffset?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TestimonialsCarouselBlock_select".
+ */
+export interface TestimonialsCarouselBlockSelect<T extends boolean = true> {
+  testimonials?:
+    | T
+    | {
+        quote?: T;
+        author?: T;
+        role?: T;
+        company?: T;
+        avatar?: T;
+        logo?: T;
+        id?: T;
+      };
+  backgroundVideo?: T;
+  backgroundColor?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CaseStudiesGridBlock_select".
+ */
+export interface CaseStudiesGridBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  caseStudies?:
+    | T
+    | {
+        percentage?: T;
+        description?: T;
+        iconName?: T;
+        link?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "VideoSectionBlock_select".
+ */
+export interface VideoSectionBlockSelect<T extends boolean = true> {
+  videoUrl?: T;
+  rounded?: T;
+  containerPadding?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BlogPostBlock_select".
+ */
+export interface BlogPostBlockSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  author?:
+    | T
+    | {
+        name?: T;
+        avatar?: T;
+        role?: T;
+      };
+  publishDate?: T;
+  category?: T;
+  featuredImage?: T;
+  content?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  readTime?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PortfolioItemBlock_select".
+ */
+export interface PortfolioItemBlockSelect<T extends boolean = true> {
+  projectTitle?: T;
+  tagline?: T;
+  client?:
+    | T
+    | {
+        name?: T;
+        industry?: T;
+        logo?: T;
+      };
+  projectDate?: T;
+  heroImage?: T;
+  services?:
+    | T
+    | {
+        service?: T;
+        id?: T;
+      };
+  challenge?: T;
+  solution?: T;
+  results?:
+    | T
+    | {
+        metric?: T;
+        description?: T;
+        icon?: T;
+        id?: T;
+      };
+  gallery?:
+    | T
+    | {
+        image?: T;
+        caption?: T;
+        id?: T;
+      };
+  testimonial?:
+    | T
+    | {
+        quote?: T;
+        author?: T;
+        role?: T;
+        avatar?: T;
       };
   id?: T;
   blockName?: T;

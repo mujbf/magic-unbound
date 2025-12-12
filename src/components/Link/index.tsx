@@ -1,4 +1,4 @@
-import { Button, type ButtonProps } from '@/components/ui/button'
+import { Button } from '@/app/(frontend)/branding/components/Button'
 import { cn } from '@/utilities/ui'
 import Link from 'next/link'
 import React from 'react'
@@ -6,7 +6,7 @@ import React from 'react'
 import type { Page, Post } from '@/payload-types'
 
 type CMSLinkType = {
-  appearance?: 'inline' | ButtonProps['variant']
+  appearance?: 'default' | 'outline' | 'primary' | 'secondary' | 'ghost' | 'accent' | 'link' | null
   children?: React.ReactNode
   className?: string
   label?: string | null
@@ -15,22 +15,22 @@ type CMSLinkType = {
     relationTo: 'pages' | 'posts'
     value: Page | Post | string | number
   } | null
-  size?: ButtonProps['size'] | null
   type?: 'custom' | 'reference' | null
   url?: string | null
+  size?: 'default' | 'lg' | 'sm' | null
 }
 
 export const CMSLink: React.FC<CMSLinkType> = (props) => {
   const {
     type,
-    appearance = 'inline',
+    appearance = 'primary',
     children,
     className,
     label,
     newTab,
     reference,
-    size: sizeFromProps,
     url,
+    size,
   } = props
 
   const href =
@@ -42,25 +42,24 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
 
   if (!href) return null
 
-  const size = appearance === 'link' ? 'clear' : sizeFromProps
   const newTabProps = newTab ? { rel: 'noopener noreferrer', target: '_blank' } : {}
 
-  /* Ensure we don't break any styles set by richText */
-  if (appearance === 'inline') {
-    return (
-      <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
-        {label && label}
-        {children && children}
-      </Link>
-    )
+  // Map 'default' to 'primary' and 'outline' to 'secondary', all others remain the same
+  const getButtonVariant = (appearance: string): 'primary' | 'secondary' | 'ghost' | 'accent' | 'link' => {
+    if (appearance === 'default') return 'primary'
+    if (appearance === 'outline') return 'secondary'
+    return appearance as 'primary' | 'secondary' | 'ghost' | 'accent' | 'link'
   }
 
+  const buttonVariant = getButtonVariant(appearance || 'primary')
+
   return (
-    <Button asChild className={className} size={size} variant={appearance}>
-      <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
+    <Link href={href || url || ''} {...newTabProps} className={cn(className)}>
+      <Button variant={buttonVariant} size={size || 'default'}>
         {label && label}
         {children && children}
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   )
 }
+
